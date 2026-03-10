@@ -1,7 +1,7 @@
 package ru.netology;
 
 import org.junit.jupiter.api.Test;
-
+import org.junit.jupiter.api.Disabled;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
 
@@ -45,6 +45,7 @@ class PostmanEchoTest {
                 .statusCode(200)
                 .body("data", equalTo("Тестирование REST API 2024"));
     }
+    @Disabled("Временно отключён: тест намеренно падает — используется для демонстрации поведения CI")
     @Test
     void shouldFailOnWrongData() {
         given()
